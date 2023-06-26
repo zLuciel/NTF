@@ -10,7 +10,7 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
 import slide_image_1 from '@/assets/4.jpg';
 import slide_image_6 from '@/assets/6.jpg';
-import slide_image_7 from '@/assets/DASD.jpg';
+import slide_image_7 from '@/assets/1418.jpg';
 import slide_image_8 from '@/assets/1418.png';
 import slide_image_9 from '@/assets/mater.png';
 import slide_image_10 from '@/assets/26.png';
