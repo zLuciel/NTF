@@ -1,0 +1,15 @@
+.section-dashboard{
+ position:relative;
+ top:-110px;
+ display: grid;
+ max-width: 1536px;
+ margin: 0 auto;
+}
+
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 340px;
+    margin-bottom: 10px;
+}
