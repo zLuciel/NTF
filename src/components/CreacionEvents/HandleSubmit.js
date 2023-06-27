@@ -8,7 +8,7 @@ const cloud_name = "ddo18h0ua";
 const FetchCreateEventDb = async (data)=>{
  // const response = await axios.post('http://localhost:3000/api/users/events', data);
   const response = await fetch(
-    `https://ntf-one.vercel.app/api/users/events`,
+    `http://localhost:3000/api/users/events`,
     {
       method: "POST",
       body: JSON.stringify(data), // Convierte el objeto a una cadena JSON

@@ -5,6 +5,7 @@ import { MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 
 export function Providers({ children }) {
+
   return (
     <Provider store={store}>
       <MantineProvider withNormalizeCSS>

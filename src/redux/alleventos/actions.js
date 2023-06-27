@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic"
 
 export const allfetchEvents = () => async (dispatch) => {
   try {
-    const response = await fetch("https://ntf-one.vercel.app/api/allevents", {
+    const response = await fetch("http://localhost:3000/api/todoevents", {
       next: { revalidate: 10 },
     });
     

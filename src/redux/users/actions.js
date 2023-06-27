@@ -5,7 +5,7 @@ import { fetchUserData } from './userSlice';
 export const getUser = (data) => async (dispatch) => {
   try {
     // Despacha la acción fetchEventsStart para indicar que la solicitud de eventos ha comenzado.
-    const response  =  await axios.post("https://ntf-one.vercel.app/api/users",data)
+    const response  =  await axios.post("http://localhost:3000/api/users",data)
 
    /* const response = await fetch("http://localhost:3000/api/users", {
       method: "POST",
