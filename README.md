@@ -1,10 +1,11 @@
 - 🤔 I’m looking for help with anything
 - 💫 She/Her
 
-**mishhuu/mishhuu** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-**lucialv/lucialv** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-Here are some ideas to get you started:
-@@ -21,10 +21,10 @@ Here are some ideas to get you started:
+**Emmanuel Abregú /Ness** Aquí encontrarás una colección de mis proyectos, donde canalizo mi creatividad y pasión por el mundo digital.
+
+Explora mi repositorio y sumérgete en el código que he creado con dedicación y perseverancia. Cada línea representa un desafío superado y un aprendizaje invaluable.
+
+Espero que encuentres inspiración y utilidad en mis proyectos. ¡Siéntete libre de colaborar, compartir ideas o simplemente disfrutar de mi trabajo!
 <table>
   <tr>
     <td align="center" style="padding=0;width=50%;">
