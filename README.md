@@ -1,11 +1,11 @@
 - 🤔 I’m looking for help with anything
-- 💫 She/Her
+- 💫 He 
 
 **Emmanuel Abregú /Ness** Aquí encontrarás una colección de mis proyectos, donde canalizo mi creatividad y pasión por el mundo digital.
-
 Explora mi repositorio y sumérgete en el código que he creado con dedicación y perseverancia. Cada línea representa un desafío superado y un aprendizaje invaluable.
-
 Espero que encuentres inspiración y utilidad en mis proyectos. ¡Siéntete libre de colaborar, compartir ideas o simplemente disfrutar de mi trabajo!
+
+Some stats!
 <table>
   <tr>
     <td align="center" style="padding=0;width=50%;">
