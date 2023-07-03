@@ -32,9 +32,11 @@ export default function Home() {
       </section>
     </main>
   {/*  <TopCreadores/>*/}
+    <div className={styles.PaddinCards}>
      <Arte  dataevent={dataEvent} title={"Tendencias en Arte"} />
      <Arte dataevent={dataEvent} title={"Tendencias en Videojuego"} />
      <Arte  dataevent={dataEvent} title={"Tendencias en Fotografía"} />
+     </div>
     </>
   )
 }

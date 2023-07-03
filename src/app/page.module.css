@@ -12,3 +12,11 @@
   min-height: 70vh;/*597px*/
   gap: 20px;
 }
+.PaddinCards{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 0;
+  max-width: 1536px;
+  margin: 0 auto;
+}

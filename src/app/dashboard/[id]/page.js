@@ -3,7 +3,7 @@ import "./dashboard.css";
 import PortadaView from "@/components/Dashboard/PortadaView/PortadaView";
 import ImageUser from "@/components/Dashboard/ImageUser/ImageUser";
 import GridDashboard from "@/components/Dashboard/GridDashboard/GridDashboard";
-import withAuth from "@/utils/withAuth";
+
 export const dynamic = 'force-dynamic';
 const img ="https://res.cloudinary.com/ddo18h0ua/image/upload/v1686715497/Events/one-pixel-brush-image-1-final_xbdmif.jpg";
 
@@ -23,7 +23,6 @@ const page = async ({params}) => {
   const data = await fetchUser(id)
   return (
     <div>
-      {id}
       <PortadaView image={img} />
       <section className="section-dashboard">
         <div className="container-img">

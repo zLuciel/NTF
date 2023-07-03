@@ -1,5 +1,6 @@
 import React from "react";
-import { ContainerBiografia, ContainerFollow, FlexColumn1, NameUserAlias } from "./css/Column1";
+import { ContainerBiografia, ContainerFollow, ContainerRedes, FlexColumn1, NameUserAlias } from "./css/Column1";
+import RedSocial from "@/components/RedSocial/RedSocial";
 
 const Column1 = ({user}) => {
   console.log(user);
@@ -34,6 +35,9 @@ const Column1 = ({user}) => {
             aliquid reprehenderit adipisci similique dolorem non, aliquam iure error omnis, ad aperiam! Explicabo, facere!
         </p>
       </ContainerBiografia>
+      <ContainerRedes>
+        <RedSocial/>
+      </ContainerRedes>
     </FlexColumn1>
   );
 };

@@ -1,27 +1,24 @@
 "use client";
-import React from 'react'
-import { CardArte, ContainerArte, FlexName, Price,} from './css/Arte'
+import React from "react";
+import { ContainerArte, FlexName } from "./css/Arte";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {Navigation } from "swiper";
+import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.min.css";
 
-
-import Image from 'next/image'
-import CardInfo from '@/components/CardInfo/CardInfo';
-
+import Image from "next/image";
+import Card from "@/components/Card/Card";
 
 SwiperCore.use([Navigation]);
 
-const Arte = ({title,dataevent}) => {
-
+const Arte = ({ title, dataevent }) => {
   return (
     <ContainerArte>
-       <FlexName>
-       <h1>{title} </h1>
-       <button>Ver todos</button>
-       </FlexName>
-       <Swiper
+      <FlexName>
+        <h1>{title} </h1>
+        <button>Ver todos</button>
+      </FlexName>
+      <Swiper
         loop
         navigation
         spaceBetween={15}
@@ -43,23 +40,18 @@ const Arte = ({title,dataevent}) => {
       >
         {dataevent?.map((data) => (
           <SwiperSlide key={data._id}>
-          <Image sizes="(min-width: 640px) 640px, 100vw" fill={true} src={`https://res.cloudinary.com/ddo18h0ua/image/upload/${data.image}.jpg`}  alt='artess'/>
-          <CardArte >
-              <div className='flex-price'>
-              <Price>
-                ${data.price}
-              </Price>
-              <span>
-                golas
-              </span>
-              </div>
-              <CardInfo title={data.title} id={data._id} user={data.user} userAvatar={data.image} />
-          </CardArte>
+            <Image
+              sizes="(min-width: 640px) 640px, 100vw"
+              fill={true}
+              src={`https://res.cloudinary.com/ddo18h0ua/image/upload/${data.image}.jpg`}
+              alt="artess"
+            />
+            <Card data={data}/>
           </SwiperSlide>
         ))}
       </Swiper>
     </ContainerArte>
-  )
-}
+  );
+};
 
-export default Arte
+export default Arte;

@@ -1,9 +1,16 @@
 import { useForm } from "@mantine/form";
 
-const useEventForm = () => {
+const useEventForm = (title = "", price = 0, description = "") => {
   const form = useForm({
-    initialValues: { title: "", descriptionCard: "", price: 0,  tags: [],startDate:"",endDate:"" },
- 
+    initialValues: {
+      title,
+      descriptionCard: description,
+      price,
+      tags: [],
+      startDate: "",
+      endDate: "",
+    },
+
     validate: {
       /*title: (value) =>
         value.length < 40 ? "Ingrese un titulo menor a 40 caracteres" : null,*/
@@ -12,7 +19,7 @@ const useEventForm = () => {
           ? "Ingrese una descripción mayor a 10 caracteres"
           : null,
       price: (value) =>
-      value.length > 8 ? "Ingrese un precio menor a 8 digitos " : null,
+        value.length > 8 ? "Ingrese un precio menor a 8 digitos " : null,
     },
   });
 

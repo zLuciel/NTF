@@ -11,7 +11,7 @@ export const CardIdEvent = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.25)) brightness(60%);
+    filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
   }
 `;

@@ -1,16 +1,16 @@
 import React from "react";
 import { CardEventDescription, ContainerTags, ContainerTextFlex } from "./css/CardDescription";
 import UserSpan from "@/components/UserSpan/UserSpan";
-import imagedb from "@/assets/6.jpg";
 import { Bgtrasparent } from "../CardEventID/css/CardEventID";
+import BtnSave from "@/components/Home/Arte/BtnSave";
 const CardDescription = () => {
   return (
     <CardEventDescription>
-      <div>
-      {/*  <Bgtrasparent>
-    <UserSpan userAvatar={imagedb} />
-      </Bgtrasparent>*/}
-
+      <div className="flex-descrip-user-fav">
+      <Bgtrasparent>
+      <UserSpan userAvatar={false} />
+      </Bgtrasparent>
+      <BtnSave/>
       </div>
       <ContainerTextFlex>
         <h2>Description</h2>

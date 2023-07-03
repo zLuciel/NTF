@@ -29,6 +29,7 @@ const eventoSchema = new Schema(
     },
     //tags: [{ type: Schema.Types.ObjectId, ref: "Tag" }],
     user: { type:  Schema.Types.ObjectId, ref: "User", required: true },
+    tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }],
   },
   {
     timestamps: true,

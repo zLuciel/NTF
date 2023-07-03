@@ -3,6 +3,7 @@ import StyledComponentsRegistry from "@/registry";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import { Providers } from "@/redux/provider";
+import Footer from "@/components/Footer/Footer";
 //import { Inter } from 'next/font/google'
 //const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +21,7 @@ export const metadata = {
         <StyledComponentsRegistry>
           <Header />
           {children}
-          <footer>
-            pie de pagina
-          </footer>
+          <Footer/>
         </StyledComponentsRegistry>
        </Providers>
       </body>

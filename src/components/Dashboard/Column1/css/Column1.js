@@ -3,16 +3,16 @@
 import { styled } from "styled-components";
 export const FlexColumn1 = styled.div`
   display: grid;
-  grid-template-columns: 400px minmax(300px,800px) ;
-  grid-template-areas: 
-  "namealias biografia"
-  "Follow biografia";
+  grid-template-columns: 400px minmax(300px, 1fr) 200px;
+  grid-template-areas:
+    "namealias biografia redes"
+    "Follow biografia redes";
   gap: 10px;
   padding-right: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
 export const NameUserAlias = styled.span`
- grid-area: namealias;
+  grid-area: namealias;
   text-align: center;
   max-width: 340px;
   h1 {
@@ -46,11 +46,38 @@ export const ContainerFollow = styled.div`
 `;
 
 export const ContainerBiografia = styled.div`
-  overflow-y: auto;
+  overflow: hidden;
   padding-left: 0px;
   height: 145px;
   grid-area: biografia;
+  transition: all 5.8s ease-in-out;
+
+  &::-webkit-scrollbar {
+    width: 5px; /* Anchura del scrollbar */
+    background: #222222;
+  }
+
+  /* Estilo del thumb del scrollbar */
+  &::-webkit-scrollbar-thumb {
+    background-color: greenyellow; /* Color del thumb */
+    border-radius: 0px; /* Borde redondeado del thumb */
+    border: 3px solid transparent; /* Borde transparente */
+  }
+
+  /* Estilo del thumb del scrollbar al pasar el ratón sobre él */
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: greenyellow; /* Color del thumb al pasar el ratón */
+  }
+  &:hover {
+    overflow-y: auto;
+  }
   h2 {
     margin-bottom: 10px;
   }
+`;
+
+export const ContainerRedes = styled.div`
+  grid-area: redes;
+  justify-self: center;
+  align-self: center;
 `;

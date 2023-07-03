@@ -9,6 +9,12 @@ display: flex;
 overflow: hidden;
 flex-direction: column;
 gap: 20px;
+
+.flex-descrip-user-fav{
+    display: flex;
+    justify-content: space-between;
+}
+
 `
 export const ContainerTextFlex = styled.div`
 display: flex;

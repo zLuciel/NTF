@@ -1,13 +1,12 @@
 import React from 'react'
-import UserSpan from '../UserSpan/UserSpan'
+import UserSpan from '../../UserSpan/UserSpan'
 import { ContainerCardInfo, TiempoCard } from './css/CardInfo'
 import Link from 'next/link'
 
 const CardInfo = ({userAvatar,title,id,user}) => {
-  console.log(user);
   return (
     <ContainerCardInfo>
-    {<Link prefetch={false} href={`/evento/${id}`}><h3>{title ? title : "Indonesia - korea Conference "} </h3></Link>}
+    {<Link prefetch={false} href={`/evento/${id}`}><h4>{title ? title : "Indonesia - korea Conference "} </h4></Link>}
     {user && <Link prefetch={false} href={`/dashboard/[id]`} as={`/dashboard/${user?._id}`}><UserSpan userAvatar={userAvatar}/></Link>}
     <TiempoCard>
       <span>

@@ -4,7 +4,8 @@
   --font-principal: 'Abril Fatface';
   --font-secundario: 'Exo';
   --bg-principal: #F8F8F8;
-  --morado-claro: #7848F4; 
+  --morado-claro: #7848F4;
+  --color-letras: greenyellow;
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -60,6 +61,7 @@ body {
 }
 
 body {
+  height: 100vh;
   color: rgb(var(--foreground-rgb));
   background: var(--bg-principal);
 }
