@@ -8,8 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { allfetchEvents } from '@/redux/alleventos/actions';
 
-//import TopCreadores from '@/components/Home/TopCreadores/TopCreadores'
-
 
 export default function Home() {
 
@@ -31,7 +29,7 @@ export default function Home() {
         <Swiper3D/> 
       </section>
     </main>
-  {/*  <TopCreadores/>*/}
+   
     <div className={styles.PaddinCards}>
      <Arte  dataevent={dataEvent} title={"Tendencias en Arte"} />
      <Arte dataevent={dataEvent} title={"Tendencias en Videojuego"} />

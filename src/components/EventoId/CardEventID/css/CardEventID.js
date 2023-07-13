@@ -2,17 +2,30 @@
 import { styled } from "styled-components";
 
 export const CardIdEvent = styled.div`
+  overflow: hidden;
+  background: black;
   color: white;
   position: relative;
   height: 548px;
   // width: 901px;
+  filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.25));
   & > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
-    filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
+  }
+  &::before{
+    top: 0;
+    color: white;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(15px) brightness(40%);
+    background: ${props => `url(${props.background}) center center/cover no-repeat`};
+    background-size:cover;
   }
 `;
 export const CardInfoAbsoluteID = styled.div`
@@ -57,7 +70,6 @@ export const Bgtrasparent = styled.div`
   padding: 5px 10px;
   backdrop-filter: blur(5.5px);
   background: rgba(0, 0, 0, 0.2);//oscuro
- 
   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px; //50
 `;

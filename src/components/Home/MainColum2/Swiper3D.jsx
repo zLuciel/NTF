@@ -6,7 +6,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper';
+import { EffectCoverflow, Pagination, Navigation, Autoplay} from 'swiper';
 
 import slide_image_1 from '@/assets/4.jpg';
 import slide_image_6 from '@/assets/6.jpg';
@@ -30,6 +30,10 @@ const Swiper3D = ()=> {
         centeredSlides={true}
         loop
         slidesPerView={1.5}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -42,7 +46,7 @@ const Swiper3D = ()=> {
           prevEl: '.swiper-button-prev',
           clickable: true,
         }}*/
-        modules={[EffectCoverflow, Pagination, Navigation]}
+        modules={[EffectCoverflow, Pagination, Navigation,Autoplay]}
         className="swiper_container"
       >
         <SwiperSlide >   

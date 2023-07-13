@@ -14,7 +14,7 @@ export const ContainerCardInfo = styled.div`
   background: rgb(0 0 0 / 55%);
   backdrop-filter: blur(2.5px);
   h4{
-  font-size: 1.1rem;
+  //font-size: 1.1rem;
   color: #F4F4F4;
   white-space: nowrap;
   overflow: hidden;

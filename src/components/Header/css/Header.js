@@ -5,13 +5,11 @@ export const HeaderContainer = styled.header`
 position: sticky;
 top: 0px;
 width: 100%;
-
 z-index: 6568;
-
 `
 export const Nav = styled.nav`
 color: white;
-background: #222222;
+background: #161616;
 height: 75px;
 ul{
     height: 100%;

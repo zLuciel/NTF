@@ -11,14 +11,7 @@ export const ContainerPreVisual = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    .previmg{
-        position: relative;
-        width: 362.75px;
-        height: 357.75px;// cambio para visualizar cuadro
-        filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
-        img{
-            border-radius: 10px;
-            object-fit: cover;
-        }
+    & > div > h1{
+        font-weight: 400;
     }
 `

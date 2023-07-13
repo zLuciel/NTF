@@ -19,6 +19,7 @@ const Card = ({edit,data}) => {
         user={data.user}
         userAvatar={data.image}
       />
+      
     </CardArte>
   );
 };

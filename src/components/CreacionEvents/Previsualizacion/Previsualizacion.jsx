@@ -1,13 +1,17 @@
 import React from "react";
-//import img from "@/assets/1.png";
 import { Button } from "@mantine/core";
 import { ContainerPreVisual } from "./css/Previsualizacion";
-import Image from "next/image";
-import Card from "@/components/Card/Card";
+import Card from "@/components/NewCard/Card/Card";
 
-const Previsualizacion = ({editBoolean,initialValues, form, handleSubmit, imageUrl, setImageUrl, setFile}) => {
-
-
+const Previsualizacion = ({
+  initialValues,
+  form,
+  handleSubmit,
+  imageUrl,
+  setImageUrl,
+  setFile,
+}) => {
+  // mostrando imagen para visualizar en tiempo real
   function handleFileChange(event) {
     const file = event.target.files[0];
     if (file) {
@@ -18,37 +22,21 @@ const Previsualizacion = ({editBoolean,initialValues, form, handleSubmit, imageU
       };
       reader.readAsDataURL(file);
     }
-  };
+  }
 
   const data = {
     title: initialValues.title,
     _id: false,
-    user:false,
-    image:false,
-    price:initialValues.price
-  }
+    user: false,
+    image: imageUrl,
+    price: initialValues.price,
+  };
 
   return (
     <ContainerPreVisual>
       <div>
         <h1>Previsualización</h1>
-        <div className="previmg">
-          {editBoolean ? <Image
-            fill={true}
-            src={`https://res.cloudinary.com/ddo18h0ua/image/upload/v1686802088/${imageUrl}.jpg`
-            }
-            alt="artess"
-          /> :<Image
-          fill={true}
-          src={
-               imageUrl
-              ? imageUrl 
-              : `https://res.cloudinary.com/ddo18h0ua/image/upload/v1686802088/${editBoolean ? imageUrl : "Events/96a3b8cffk98652c889f7352d16b30c7_kbdjci"}.jpg`
-          }
-          alt="artess"
-        /> }
-          <Card data={data}/>
-        </div>
+        <Card data={data} />
       </div>
       <input
         id="file-inputx"

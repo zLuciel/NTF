@@ -20,7 +20,7 @@ const MainEventoID =  async ({id}) => {
   const data = await GetEventsId(id)
   return (
     <SectionGridEventId>
-        <CardEventID image={data?.image} title={data.title}  />
+        <CardEventID endDate={data?.endDate} price={data?.price} image={data?.image} title={data.title}  />
         <CardDescription/>
     </SectionGridEventId>
   )

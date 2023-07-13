@@ -1,6 +1,6 @@
 "use client";
-
 import { styled } from "styled-components";
+
 export const FlexColumn1 = styled.div`
   display: grid;
   grid-template-columns: 400px minmax(300px, 1fr) 200px;
@@ -46,6 +46,7 @@ export const ContainerFollow = styled.div`
 `;
 
 export const ContainerBiografia = styled.div`
+  color: white;
   overflow: hidden;
   padding-left: 0px;
   height: 145px;

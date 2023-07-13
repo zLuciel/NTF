@@ -2,6 +2,7 @@
 import { styled } from "styled-components";
 
 export const CardEventDescription = styled.div`
+color:white;
 border: 1px solid #E0E0E0;
 border-radius: 10px;
 padding: 20px 40px;
@@ -9,7 +10,6 @@ display: flex;
 overflow: hidden;
 flex-direction: column;
 gap: 20px;
-
 .flex-descrip-user-fav{
     display: flex;
     justify-content: space-between;
@@ -35,7 +35,6 @@ font-style: normal;
 font-weight: 400;
 font-size: 1rem;
 line-height: 25px;
-color: #414141;
 }
 `
 

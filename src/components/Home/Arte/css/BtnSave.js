@@ -8,8 +8,6 @@ align-items: center;
 height: 100%;
 ` 
 
-
-
 export const BtnSaveStyled = styled.button`
 cursor: pointer;
 display: flex;
@@ -17,12 +15,12 @@ justify-content: center;
 align-items: center;
 padding: 8px;
 border-radius: 900px;
-background: rgba(0, 0, 0, 0.24);
-backdrop-filter: blur(2.5px);
+background: var(--bg-secundary);
+filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.45));
 border: none;
 
 :hover{
-    color: greenyellow;
+    color: var(--morado-claro);
 }
 .icon-favorite  {
     color: white;

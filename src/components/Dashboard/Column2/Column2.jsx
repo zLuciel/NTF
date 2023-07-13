@@ -1,8 +1,8 @@
 import React from "react";
 import { ContainerColum2, FlexButtonUser, GridCard } from "./css/Column2";
-import Image from "next/image";
 import Link from "next/link";
-import Card from "@/components/Card/Card";
+import Card from "@/components/NewCard/Card/Card";
+
 
 const Column2 = ({ events,edit }) => {
   return (
@@ -13,7 +13,6 @@ const Column2 = ({ events,edit }) => {
           <span>Favoritos</span>
         </div>
         <button>
-          {" "}
           <Link  href="/dashboard/create" as={"/dashboard/create"}>
             Crear
           </Link>
@@ -21,7 +20,16 @@ const Column2 = ({ events,edit }) => {
       </FlexButtonUser>
       <GridCard>
         {events?.map((data, i) => (
-          <div key={i} className="contxd">
+          <Card key={i} edit={edit} data={data}/>
+        ))}
+      </GridCard>
+    </ContainerColum2>
+  );
+};
+
+export default Column2;
+
+  /*<div key={i} className="contxd">
             <Image
               fill={true}
               sizes="(min-width: 640px) 640px, 100vw"
@@ -31,13 +39,5 @@ const Column2 = ({ events,edit }) => {
             <Card
             edit={edit}
             data={data}
-
             />
-          </div>
-        ))}
-      </GridCard>
-    </ContainerColum2>
-  );
-};
-
-export default Column2;
+        </div>*/

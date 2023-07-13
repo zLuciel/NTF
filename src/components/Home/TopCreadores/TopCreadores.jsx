@@ -8,11 +8,10 @@ import "swiper/swiper-bundle.min.css";
 
 import slide_image_1 from "@/assets/4.jpg";
 import slide_image_6 from "@/assets/6.jpg";
-import slide_image_7 from "@/assets/DASD.jpg";
+import slide_image_7 from "@/assets/1418.jpg";
 import slide_image_8 from "@/assets/1418.png";
 import slide_image_9 from "@/assets/mater.png";
-import Image from "next/image";
-import ViewInfoCard from "../MainColum2/ViewInfoCard";
+import Card from "@/components/NewCard/Card/Card";
 
 SwiperCore.use([Autoplay]);
 SwiperCore.use([Navigation]);
@@ -41,6 +40,16 @@ const TopCreate = [
   {
     image: slide_image_8,
   },
+
+{
+  image: slide_image_6,
+},
+{
+  image: slide_image_7,
+},
+{
+  image: slide_image_8,
+},
 ];
 const TopCreadores = () => {
   return (
@@ -52,10 +61,10 @@ const TopCreadores = () => {
           disableOnInteraction: false,
         }}
         loop
-        
+        className="swiper"
         navigation
-        spaceBetween={15}
-         slidesPerView={4}
+        spaceBetween={0}
+         slidesPerView={5.5}
         /*  breakpoints={{
           1458: {
             slidesPerView: 4
@@ -73,8 +82,7 @@ const TopCreadores = () => {
       >
         {TopCreate.map((data, i) => (
           <SwiperSlide key={i}>
-            <Image src={data.image} alt="creadores" />
-            <ViewInfoCard width={"90%"} height={"50px"} fontRem={"15px"}/>
+            <Card image={data.image} />
           </SwiperSlide>
         ))}
       </Swiper>

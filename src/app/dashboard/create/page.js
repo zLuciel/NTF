@@ -12,18 +12,25 @@ const Create = () => {
   const [file, setFile] = useState("");
   const userdb = useSelector((state) => state.users.user);
   const editinfo = useSelector((state) => state.users.editData);
- const [imageUrl, setImageUrl] = useState(editinfo?.image );
+  const imgDefault = "https://res.cloudinary.com/ddo18h0ua/image/upload/v1686802088/Events/96a3b8cffk98652c889f7352d16b30c7_kbdjci.jpg";
+  const [imageUrl, setImageUrl] = useState(
+    editinfo ? editinfo?.image : imgDefault
+  );
 
   const { initialValues, form } = useEventForm(
     editinfo?.title,
     editinfo?.price,
-    editinfo?.description
+    editinfo?.description,
+    editinfo?.endDate,
+    editinfo?.startDate
   );
-  console.log(editinfo);
-
+ 
+ 
   const handleSubmitForm = async (values) => {
+    // verifica si viene vacio o tiene algo para modificar
+    if(editinfo) values.eventoId = editinfo?._id 
     values._id = await userdb._id;
-    await handleSubmit(file, values, setImageUrl);
+    await handleSubmit(file, values, setImageUrl,editinfo);
   };
 
   return (
@@ -31,7 +38,6 @@ const Create = () => {
       <section className="grid-container-create">
         <div className="col1">
           <Previsualizacion
-            editBoolean={editinfo?.image}
             imageUrl={imageUrl}
             setFile={setFile}
             setImageUrl={setImageUrl}

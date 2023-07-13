@@ -1,55 +1,51 @@
 import { notifications } from "@mantine/notifications";
-import axios from "axios";
-
-const preset_key = "fmuu34uf";
-const cloud_name = "ddo18h0ua";
+import deleteImageCloudinary from "@/utils/cloudinary/deleteImage";
+import CloudinaryGetImg from "@/utils/cloudinary/updoladImg";
 
 
-const FetchCreateEventDb = async (data)=>{
- // const response = await axios.post('http://localhost:3000/api/users/events', data);
-  const response = await fetch(
-    `http://localhost:3000/api/users/events`,
-    {
-      method: "POST",
-      body: JSON.stringify(data), // Convierte el objeto a una cadena JSON
-     headers: {
-      "Content-Type": "application/json" // Establece el encabezado Content-Type como JSON
-    }
-    }
-  );
-  
-}
+async function FetchCreateEventDb(data) {
+  const res = await fetch(`http://localhost:3000/api/users/events`, {
+    method: "POST",
+    body: JSON.stringify(data), 
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+};
 
-const handleSubmit = async (file, values, setImageUrl) => {
+async function updateEventDb(data) {
+  const res = await fetch(`http://localhost:3000/api/users/events`, {
+    method: "PUT",
+    body: JSON.stringify(data), 
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const datares = await res.json()
+};
+
+
+async function handleSubmit(file, values, setImageUrl,editinfo) {
   try {
     // Realizar la carga de la imagen si se seleccionó un archivo
     if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", preset_key);
-      formData.append("folder", "Events");
 
-      const response = await fetch(
-        `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Error al cargar la imagen");
-      }
-
-      const data = await response.json();
-      setImageUrl(data.secure_url);
-      console.log(data);
-      // agregamos los datos de la imagen y id para futuro editarlo
-      values.image = data.public_id;
-      await FetchCreateEventDb(values)
+      if(editinfo === null){
+        const data = await CloudinaryGetImg(file)
+        setImageUrl(data.secure_url);
+        values.image = data.public_id;
+        await FetchCreateEventDb(values)
+      }else{
+        await deleteImageCloudinary(editinfo.image)
+        const data = await CloudinaryGetImg(file)
+        values.image = data.public_id;
+        await updateEventDb(values)
+      }  
+    }else{
+      await updateEventDb(values)
     }
 
-    // Realizar el envío del formulario
+    // Realizar mensaje  el envío del formulario
     notifications.show({
       message: "Enviando",
       color: "green",

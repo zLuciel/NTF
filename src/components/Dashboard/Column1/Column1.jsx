@@ -3,7 +3,6 @@ import { ContainerBiografia, ContainerFollow, ContainerRedes, FlexColumn1, NameU
 import RedSocial from "@/components/RedSocial/RedSocial";
 
 const Column1 = ({user}) => {
-  console.log(user);
   return (
     <FlexColumn1>
       <NameUserAlias>
