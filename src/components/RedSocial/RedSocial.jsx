@@ -1,12 +1,12 @@
 import React from 'react'
 import { FlexRedes } from './css/RedSocial'
-import { BiLogoFacebook,BiLogoInstagram,BiLogoLinkedin } from 'react-icons/Bi';
+import { LiaFacebookF,LiaInstagram,LiaLinkedinIn } from 'react-icons/lia';
 const RedSocial = () => {
   return (
     <FlexRedes>
-        <span><BiLogoFacebook/></span>
-        <span><BiLogoInstagram/></span>
-        <span><BiLogoLinkedin/></span>
+        <span><LiaFacebookF/></span>
+        <span><LiaInstagram/></span>
+        <span><LiaLinkedinIn/></span>
     </FlexRedes>
   )
 }
