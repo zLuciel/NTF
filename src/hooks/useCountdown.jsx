@@ -9,7 +9,7 @@ const initialSate = {
 };
 const useCountdown = (targetDate) => {
   const [timeLeft, setTimeLeft] = useState(initialSate);
-  const [message, setMessage] = useState("Inicio");
+  const [message, setMessage] = useState("esperando");
   //**Saber el mes May y dia 15 ejemplo */
   const monthOptions = { month: "long" };
   const monthName = new Intl.DateTimeFormat("es-ES", monthOptions).format(targetDate);
@@ -25,6 +25,7 @@ const useCountdown = (targetDate) => {
         setTimeLeft(initialSate);
         setMessage("finalizado")
       } else {
+        setMessage("Inicio")
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
           (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -42,7 +43,6 @@ const useCountdown = (targetDate) => {
         });
       }
     }, 1000);
-
     return () => {
       clearInterval(interval);
     };

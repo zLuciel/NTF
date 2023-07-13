@@ -33,7 +33,7 @@
   margin: 0 auto;
   max-width: 1536px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 600px 1fr;
   min-height: calc(80vh - 77px);/*597px*/
   gap: 20px;
 }

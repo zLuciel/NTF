@@ -23,8 +23,8 @@ const Arte = ({ title, dataevent }) => {
         spaceBetween={20}
         slidesPerView={5}
         /* breakpoints={{
-          1618: {
-            slidesPerView: 5
+          1523: {
+            slidesPerView: 4
           },
         }}*/
       >

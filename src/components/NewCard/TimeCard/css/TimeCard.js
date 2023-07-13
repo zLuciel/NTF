@@ -11,11 +11,12 @@ export const TimeCardStyled = styled.div`
   justify-content: space-between;
 
   h4 {
-    color: var(--color-letras);
+    text-transform: capitalize;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     font-family: "Exo";
+    color: var(--color-letras);
   }
 
   & > span {
@@ -38,8 +39,7 @@ export const Time = styled.span`
       display: inline-block;
       font-weight: 400;
     }
-    
-  }
+  } 
 `;
 export const DateStyled = styled.span`
   justify-content: center;
