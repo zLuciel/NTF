@@ -13,11 +13,13 @@ const Arte = ({ title, dataevent }) => {
   return (
     <ContainerArte>
       <FlexName>
-        <h1>{title}</h1>
+        <span>
+          <h1>{title}</h1>
+        </span>
         <button>Ver todos</button>
       </FlexName>
       <Swiper
-      className="swiper"
+        className="swiper"
         loop
         navigation
         spaceBetween={20}
@@ -30,7 +32,7 @@ const Arte = ({ title, dataevent }) => {
       >
         {dataevent?.map((data) => (
           <SwiperSlide key={data._id}>
-            <Card data={data} id={data?._id} user={data?.user}/>
+            <Card data={data} id={data?._id} user={data?.user} />
           </SwiperSlide>
         ))}
       </Swiper>

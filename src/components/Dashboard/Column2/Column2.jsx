@@ -20,7 +20,7 @@ const Column2 = ({ events,edit }) => {
       </FlexButtonUser>
       <GridCard>
         {events?.map((data, i) => (
-          <Card key={i} edit={edit} data={data}/>
+          <Card key={i} edit={edit} data={data} id={data?._id} />
         ))}
       </GridCard>
     </ContainerColum2>

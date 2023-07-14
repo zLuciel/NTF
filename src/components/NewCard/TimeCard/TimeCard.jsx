@@ -1,4 +1,4 @@
-
+"use client"
 import React from "react";
 import { DateStyled, Time, TimeCardStyled } from "./css/TimeCard";
 import useCountdown from "@/hooks/useCountdown";

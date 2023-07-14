@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 
 export const ContainerArte = styled.section`
   margin-bottom: 0px;
-  padding: 0px 20px;
+  padding: 0px 10px;
   .swiper {
     padding: 10px 10px;
     //height: 300px;
@@ -14,8 +14,20 @@ export const ContainerArte = styled.section`
 `;
 
 export const FlexName = styled.span`
-  & > h1{
-    line-height: 1.3;
+padding: 0 10px;
+  span {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p{
+      max-width: 800px;
+      color: #c7c7c7;
+      font-size: 0.9rem;
+    }
+  }
+  & > span > h1 {
+    //line-height: 1.3;
     font-weight: 400;
     text-transform: capitalize;
   }

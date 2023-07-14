@@ -7,6 +7,7 @@ import Swiper3D from '@/components/Home/MainColum2/Swiper3D'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { allfetchEvents } from '@/redux/alleventos/actions';
+import GridGallery from '@/components/GridGallery/GridGallery';
 
 
 export default function Home() {
@@ -31,9 +32,10 @@ export default function Home() {
     </main>
    
     <div className={styles.PaddinCards}>
-     <Arte  dataevent={dataEvent} title={"Tendencias en Arte"} />
+      <GridGallery/>
+     {/*<Arte  dataevent={dataEvent} title={"Tendencias en Arte"} />
      <Arte dataevent={dataEvent} title={"Tendencias en Videojuego"} />
-     <Arte  dataevent={dataEvent} title={"Tendencias en Fotografía"} />
+     <Arte  dataevent={dataEvent} title={"Tendencias en Fotografía"} />*/}
      </div>
     </>
   )
