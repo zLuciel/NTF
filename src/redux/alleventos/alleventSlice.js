@@ -10,7 +10,7 @@ const alleventSlice = createSlice({
   initialState,
   reducers: {
     fetchEventsSuccess: (state, action) => {
-      state.data = action.payload;
+      state.data = action.payload.reverse();
     },
   },
 });

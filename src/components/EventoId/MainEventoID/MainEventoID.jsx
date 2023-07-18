@@ -21,7 +21,7 @@ const MainEventoID =  async ({id}) => {
   return (
     <SectionGridEventId>
         <CardEventID endDate={data?.endDate} price={data?.price} image={data?.image} title={data.title}  />
-        <CardDescription/>
+        <CardDescription image={data?.image}/>
     </SectionGridEventId>
   )
 }

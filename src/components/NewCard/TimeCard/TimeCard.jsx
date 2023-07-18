@@ -11,7 +11,7 @@ export const TimeCard = ({ endDate }) => {
     <TimeCardStyled>
       <Time $message={message} >
         <h4>{message}</h4>      
-         <span className="xd">
+         <span className="xd4">
             <p>{timeLeft.days}D</p>
             <p>{timeLeft.hours}h</p>
             <p>{timeLeft.minutes}m</p>

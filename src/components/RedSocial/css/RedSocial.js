@@ -7,18 +7,19 @@ export const FlexRedes = styled.div`
   gap: 10px;
   span {
     cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.48);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
     width: 42px;
     height: 42px;
     border-radius: 42px;
-    background: #fff;
-    box-shadow: -3px 3px 4px 0px rgba(0, 0, 0, 0.14);
+    background: #161616;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: all 0.4s ease-in-out;
     &:hover{
-        background: #222222;
-        color: greenyellow;
+        color: var(--morado-claro);
         transition: all 0.4s ease-in-out;
     }
     & > *{

@@ -29,7 +29,7 @@ export const CreateStyledMain = styled.main`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(to right, transparent, #101010);
+    background-image: linear-gradient(to right, transparent, #1B1B1B);
     opacity: 1; /* Ajusta el nivel de opacidad según desees */
     backdrop-filter: blur(10px) brightness(50%);
   }

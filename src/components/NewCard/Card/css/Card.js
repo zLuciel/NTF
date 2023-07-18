@@ -3,22 +3,19 @@ import { styled } from "styled-components";
 
 export const NewCard = styled.div`
   color: white;
+  backface-visibility: hidden;
   position: relative;
-  border-radius: 10px;
-  //background: #fff;
-  background: var(--bg-secundary);
-  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 1);
+  background-color: var(--bg-secundary);
   border-radius: 10px;
   overflow: hidden;
-  /* width: 290px;
-  height: 332px;*/
   width: 285px;
   height: 332px;
   display: grid;
   grid-template-rows: 182px 1fr;
-  transition: transform 0.2s ease-in;
+  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease-in-out;
   &:hover {
-    transform: translateY(-10px);
+   transform: translateY(-10px);
   }
   .grid-center {
     align-self: center;
@@ -43,7 +40,8 @@ export const InfoCardNew = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
-  h1 {
+  transition: color 0.2s ease-in-out;
+  & > a > h1 {
     max-width: 230px;
     white-space: nowrap;
     overflow: hidden;
@@ -84,9 +82,9 @@ export const PriceCard = styled.span`
   /**color */
   color: white;
   font-family: Inter;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 700;
+ // font-weight: 700;
   line-height: normal;
   p {
     color: var(--morado-claro);

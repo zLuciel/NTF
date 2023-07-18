@@ -3,12 +3,12 @@ import { CardEventDescription, ContainerTags, ContainerTextFlex } from "./css/Ca
 import UserSpan from "@/components/UserSpan/UserSpan";
 import { Bgtrasparent } from "../CardEventID/css/CardEventID";
 import BtnSave from "@/components/Home/Arte/BtnSave";
-const CardDescription = () => {
+const CardDescription = ({image}) => {
   return (
     <CardEventDescription>
       <div className="flex-descrip-user-fav">
       <Bgtrasparent>
-      <UserSpan userAvatar={false} />
+      <UserSpan userAvatar={image} />
       </Bgtrasparent>
       <BtnSave/>
       </div>
@@ -25,8 +25,6 @@ const CardDescription = () => {
           I get like this every timeOn these days that feel like you and
           meHeartbreak anniversaryCause I remember every timeOn these days that
           feel like you and meHeartbreak anniversaryDo you ever think of me?
-          no(Ooh) no-no, no(Ooh, ooh, ooh) ooh, nah Im buildin my hopes upLike
-          presents unopened til this day
         </p>
       </ContainerTextFlex>
       <ContainerTags>

@@ -11,6 +11,7 @@ const Previsualizacion = ({
   setImageUrl,
   setFile,
 }) => {
+
   // mostrando imagen para visualizar en tiempo real
   function handleFileChange(event) {
     const file = event.target.files[0];
@@ -24,13 +25,13 @@ const Previsualizacion = ({
     }
   }
 
-  const data = {
-    title: initialValues.title,
-    _id: false,
-    user: false,
-    image: imageUrl,
-    price: initialValues.price,
-  };
+  const data = {};
+  data.title = initialValues.title,
+  data._id = false
+  data.user = false,
+  data.image = imageUrl,
+  data.price = initialValues.price,
+  data.endDate = initialValues.endDate || "2023-06-15T09:05:47.853Z"
 
   return (
     <ContainerPreVisual>

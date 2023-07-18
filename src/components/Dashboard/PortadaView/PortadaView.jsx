@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 const PortadaView = ({image}) => {
   return (
-    <ContainerPortada>
-        <Image fill={true}  sizes="100vw" priority={"high"} alt='portada' src={image}/>
+    <ContainerPortada portada={image}>
+        {<Image fill={true}  sizes="100vw" priority={"high"} alt='portada' src={image}/>}
     </ContainerPortada> 
   )
 }

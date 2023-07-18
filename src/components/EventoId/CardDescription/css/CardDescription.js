@@ -30,11 +30,12 @@ line-height: 32px;
 }
 
 p{
+color: #BCBCBC;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 1rem;
 line-height: 25px;
+font-size: 0.875rem;
 }
 `
 

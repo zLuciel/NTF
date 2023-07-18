@@ -9,16 +9,6 @@ export const GridCard = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));//362
   gap: 20px 10px;
-
-  .contxd {
-    position: relative;
-    height: 280px;
-    img {
-      border-radius: 10px;
-      filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.25));
-      object-fit: cover;
-    }
-  }
 `;
 export const FlexButtonUser = styled.div`
   display: flex;

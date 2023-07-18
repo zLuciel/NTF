@@ -15,8 +15,12 @@ export const Colum1Main = styled.div`
     line-height: 86px;
     color: white;
     max-width: 685px;
+    p{
+      color: var(--morado-claro);
+      display: inline;
+    }
   }
-  p {
+  & > p {
     max-width: 450px;
     font-family: "Inter";
     font-style: normal;

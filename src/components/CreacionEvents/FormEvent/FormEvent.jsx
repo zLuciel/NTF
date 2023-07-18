@@ -2,8 +2,8 @@ import { DateTimePicker } from "@mantine/dates";
 import { TextInput, Textarea, MultiSelect } from "@mantine/core";
 import { ContainerForm } from "./css/FormEvent";
 
- const  FormEvent =   ({form, handleSubmit })=> {
-   const options = [
+const FormEvent = ({ form, handleSubmit }) => {
+  const options = [
     { value: "conferencia", label: "Conferencia" },
     { value: "seminario", label: "Seminario" },
     { value: "taller", label: "Taller" },
@@ -62,6 +62,6 @@ import { ContainerForm } from "./css/FormEvent";
       </form>
     </ContainerForm>
   );
-}
+};
 
 export default FormEvent;

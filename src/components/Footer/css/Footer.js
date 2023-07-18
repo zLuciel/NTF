@@ -9,8 +9,8 @@ justify-content: center;
 align-items: center;
 width: 100%;
 height: 70px;
-background: #161616;
+background: #0e0e0e;
 a{
-    color: greenyellow;
+    color: var(--morado-claro);
 }
 `

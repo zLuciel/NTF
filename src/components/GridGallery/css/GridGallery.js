@@ -3,6 +3,7 @@
 import { styled } from "styled-components";
 
 export const GridGalleryStyled = styled.section`
+ backface-visibility: hidden;
   color: white;
   display: grid;
   gap: 15px;
@@ -18,11 +19,11 @@ export const GridGalleryStyled = styled.section`
     box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease-in-out;
   &:hover{
-    transition: transform 0.3s ease-in-out;
+    transform: transform 0.3s ease-in-out;
     transform: scale(1.05);
     box-shadow: -8px 8px 4px rgba(0, 0, 0, 0.5);
   }
-  
+
   }
   .span-flex {
     width: 100%;
@@ -41,18 +42,24 @@ export const GridGalleryStyled = styled.section`
   .lg {
     font-size: 1.3rem;
     font-weight: 500;
+
+  }
+  h1>p{
+    display: inline;
+    color:var(--morado-claro);
   }
 `;
 
 export const Parrafo = styled.p`
   max-width: 400px;
-  color: #f1f1f1;
-  font-family: Inter;
-  font-size: 16px;
+ // color: #f1f1f1;
+  font-family: "Exo";
+  font-size: .95rem;
   font-style: normal;
   font-weight: 500;
   line-height: 22px;
   display: flex;
+  color: #E0E0E0;
 `;
 export const GalleryArte = styled.div`
   grid-area: arte;

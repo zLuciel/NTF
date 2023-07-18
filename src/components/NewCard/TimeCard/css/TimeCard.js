@@ -3,20 +3,19 @@ import { styled } from "styled-components";
 
 export const TimeCardStyled = styled.div`
  //border-top: 1px solid #CACACA;
- border-top: 1px solid #5a5a5a;
-
+  border-top: 1px solid #5a5a5a;
   padding: 8px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  h4 {
+   h4 {
     text-transform: capitalize;
-    font-size: 1rem;
+    color: var(--morado-claro);
+    font-size: 0.9rem;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-family: "Exo";
-    color: var(--color-letras);
   }
 
   & > span {
@@ -26,13 +25,13 @@ export const TimeCardStyled = styled.div`
   }
   p {
     font-family: Inter;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-style: normal;
   }
 `;
 
 export const Time = styled.span`
-  .xd{
+  .xd4{
     display: flex;
     gap: 5px;
     p{

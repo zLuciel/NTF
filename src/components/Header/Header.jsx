@@ -1,5 +1,5 @@
 "use client"
-import { HeaderContainer, Nav } from './css/Header'
+import { HeaderContainer, ListNav, Logo, Nav } from './css/Header'
 import { auth } from "@/utils/Firebase.js";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Link from 'next/link';
@@ -56,13 +56,13 @@ const Header = () => {
   return (
     <HeaderContainer>
        <Nav>
-        <ul>
-          <li><button ><Link   href={"/"} as={"/"} >Home</Link> </button></li>
+        <Logo><Link   href={"/"} as={"/"} >Event<p>Box</p> </Link></Logo>
+        <ListNav>
           <li>{userdb?.name && loggin ? userdb?.name : "Anonimo" } </li>
           <li onClick={signInWithGoogle}>Iniciar sesión con Google</li>
           <li onClick={signOut}>cerrar</li>
           <li> <button><Link href={"/dashboard"} as={"/dashboard"} >dashboard</Link> </button></li>
-        </ul>
+        </ListNav>
       </Nav>
     </HeaderContainer>
   )

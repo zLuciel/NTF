@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerBiografia, ContainerFollow, ContainerRedes, FlexColumn1, NameUserAlias } from "./css/Column1";
+import { BtnEditarPerfil, BtnFollow, ContainerBiografia, ContainerFollow, ContainerRedes, FlexColumn1, NameUserAlias } from "./css/Column1";
 import RedSocial from "@/components/RedSocial/RedSocial";
 
 const Column1 = ({user}) => {
@@ -10,8 +10,7 @@ const Column1 = ({user}) => {
         <p>@Emmanuel</p>
       </NameUserAlias>
 
-      <ContainerFollow>
-        <div className="white-cuadro">
+      <ContainerFollow> 
           <span>
             <h2>{user?.seguidores}</h2>
             <p>Seguidores</p>
@@ -19,8 +18,7 @@ const Column1 = ({user}) => {
           <span>
             <h2>310</h2>
             <p>Seguidores</p>
-          </span>
-        </div>
+          </span> 
       </ContainerFollow>
 
       <ContainerBiografia>
@@ -34,9 +32,12 @@ const Column1 = ({user}) => {
             aliquid reprehenderit adipisci similique dolorem non, aliquam iure error omnis, ad aperiam! Explicabo, facere!
         </p>
       </ContainerBiografia>
-      <ContainerRedes>
+      {<ContainerRedes>
+        <h2>Redes sociales</h2>
         <RedSocial/>
-      </ContainerRedes>
+        <BtnEditarPerfil>Editar Perfil</BtnEditarPerfil>
+        <BtnFollow>Seguir</BtnFollow>
+  </ContainerRedes>}
     </FlexColumn1>
   );
 };
