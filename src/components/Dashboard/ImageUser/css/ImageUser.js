@@ -2,8 +2,8 @@
 import { styled } from "styled-components";
 
 export const StyledImageUser = styled.div`
-  width: 206px;
-  height: 206px;
+  width:  206px;//206
+  height: 206px;//206
   filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
   position: relative;
   &:before {

@@ -17,11 +17,8 @@ const Previsualizacion = ({
     const file = event.target.files[0];
     if (file) {
       setFile(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImageUrl(reader.result);
-      };
-      reader.readAsDataURL(file);
+      const src = URL.createObjectURL(file) 
+      setImageUrl(src)
     }
   }
 

@@ -1,5 +1,6 @@
 import Eventos from "@/models/Eventos";
 import Users from "@/models/Users";
+import Tags from "@/models/Tags"
 //import { createUserIfNotExists } from "@/utils/createUserIfNotExists";
 import { dbConnect } from "@/utils/mongoose.js";
 import { NextResponse } from "next/server";
@@ -10,7 +11,7 @@ export async function GET(req,{params}) {
     const id = params.id;
     
   try {
-    const eventsUser = await Eventos.findById(id).populate("user");
+    const eventsUser = await Eventos.findById(id).populate("user").populate("tags");
     return NextResponse.json(eventsUser);
   } catch (error) {
     console.error(error);

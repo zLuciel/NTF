@@ -13,7 +13,6 @@ export const ContainerSwiper3D = styled.div`
   overflow: hidden;
   border-radius: 2rem;
   position: relative;
-  filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.8));
 }
 
 .swiper-slide > img {

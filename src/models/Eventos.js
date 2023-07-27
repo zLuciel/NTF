@@ -14,22 +14,21 @@ const eventoSchema = new Schema(
       trim: true,
     },
     price: {
-      type: String,
+      type: Number,
       required: [true, "Price is required"],
+    },
+    delete: {
+      type: Boolean, default: false
     },
     image: {
       type: String,
       required: [true, "Image is required"],
     },
-    startDate:{type: String,
-      required: [true, "Start Date is required"]
-    },
     endDate:{type: String,
       required: [true, "End Date is required"]
     },
-    //tags: [{ type: Schema.Types.ObjectId, ref: "Tag" }],
     user: { type:  Schema.Types.ObjectId, ref: "User", required: true },
-    tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }],
+    tags: [{ type: Schema.Types.ObjectId, ref: 'Tag',required: true }],
   },
   {
     timestamps: true,

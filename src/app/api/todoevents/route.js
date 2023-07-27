@@ -3,16 +3,21 @@ import Users from "@/models/Users";
 import { dbConnect } from "@/utils/mongoose.js";
 
 import { NextResponse } from "next/server";
+import MethodAllEvents from "./handler";
 dbConnect();
 
 
 
-export async function GET(req) {
+export async function GET(request) {
   try {
-    const data = await Eventos.find().populate("user", "name _id");
+    const { searchParams } = new URL(request.url);
+    const category = searchParams.get("category");
+    const priceRange = searchParams.get("price");
+    const page = searchParams.get("page");
+    const data = await MethodAllEvents.getEventsFilter(category, priceRange, page)
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ msg: "erro al obtener todos los eventos" });
+    return NextResponse.json({ msg: "erro al obtener todos los eventos",error });
   }
 }
 

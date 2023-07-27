@@ -9,13 +9,13 @@ import {
 import UserSpan from "@/components/UserSpan/UserSpan";
 import TimeCardEvent from "./TimeCardEvent";
 
-const CardEventID = ({ image,title,price,endDate }) => {
+const CardEventID = ({ picture,image,title,price,endDate }) => {
   return (
     <CardIdEvent background={`https://res.cloudinary.com/ddo18h0ua/image/upload/${image}.jpg`} >
       <Image fill={true}  sizes="(min-width: 640px) 640px, 100vw" src={`https://res.cloudinary.com/ddo18h0ua/image/upload/${image}.jpg`} alt="imageId" />
       <CardInfoAbsoluteID>
         <Bgtrasparent>
-          <UserSpan userAvatar={image} />
+          <UserSpan userAvatar={picture} />
         </Bgtrasparent>
         <h1>{title} </h1>
         <FlexGap>

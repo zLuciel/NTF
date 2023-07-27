@@ -11,6 +11,10 @@ const createDefaultTags = async () => {
         { name: 'arte' },
         { name: 'música' },
         { name: 'paisaje' },
+        { name: 'robot' },
+        { name: 'espacial'},
+        { name: 'anime' },
+        { name: 'Videojuego' },
       ];
 
       // Insertar los tags en la base de datos

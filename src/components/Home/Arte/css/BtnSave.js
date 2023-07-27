@@ -19,7 +19,7 @@ border-radius: 900px;
 background: var(--bg-secundary);
 filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.45));
 border: 1px solid rgba(0, 0, 0, 0.48);
-color: white;
+color: ${({$matchFavorite,$fav})=> $matchFavorite || $fav ? "var(--morado-claro)" : "white"};
 &:hover{
     color: var(--morado-claro);
 }

@@ -1,71 +1,82 @@
-"use client"
-import { HeaderContainer, ListNav, Logo, Nav } from './css/Header'
-import { auth } from "@/utils/Firebase.js";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import Link from 'next/link';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUser, setNullUser} from '@/redux/users/actions';
-import { useEffect,useState} from 'react';
+"use client";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { BsDiscord, BsFillCreditCard2FrontFill } from "react-icons/bs";
+export const dynamic = "force-dynamic";
+
+import { HeaderContainer, ListNav, Logo, Nav } from "./css/Header";
+import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { getFavorite, getUser, setNullUser } from "@/redux/users/actions";
+import { useEffect } from "react";
+
+import UserHeader from "../UserHeader/UserHeader";
+import { fetchtags } from "@/redux/alleventos/actions";
 
 const Header = () => {
+  const { data: session } = useSession();
   const userdb = useSelector((state) => state.users.user);
-  const [loggin,setLoggin] = useState(false)
-   console.log(userdb);
- // const datadb = useSelector((state) => state.users.data);
   const dispatch = useDispatch();
 
+  async function loginDiscord() {
+    await signIn("discord");
+  }
+
+  async function signOutDiscord() {
+    await signOut("discord");
+    setNullUser(null);
+  }
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setLoggin(true)
-        const { uid, displayName, email, photoURL } = user;
-        const data = {uid,name:displayName,email,active:true}
-        dispatch(getUser(data));
-      }else{
-        setLoggin(false)
-      } // Dispatch de la acción setUser con el usuario
-    });
-
-    return () => unsubscribe();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch]);
-
-  //**logueo */
-  const signInWithGoogle = async () => {
-    console.log("entrando");
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      console.log("Iniciaste sesión con éxito");
-    } catch (error) {
-      console.log(error);
+    if (session) {
+      dispatch(getUser(session?.token));
     }
-  };
+    dispatch(fetchtags());
+  }, [dispatch, session]);
 
-  const signOut = async () => {
-    try {
-      await auth.signOut();
-      setNullUser(null)
-      console.log("Cierre de sesión exitoso");
-    } catch (error) {
-      console.log("Error al cerrar sesión:", error);
-      // Manejo de errores
+  useEffect(() => {
+    if (userdb) {
+      dispatch(getFavorite(userdb?._id));
     }
-  };
+  }, [dispatch, userdb]);
 
   return (
     <HeaderContainer>
-       <Nav>
-        <Logo><Link   href={"/"} as={"/"} >Event<p>Box</p> </Link></Logo>
+      <Nav>
+        <Logo>
+          <Link href={"/"} as={"/"}>
+            Event<p>Box</p>{" "}
+          </Link>
+        </Logo>
         <ListNav>
-          <li>{userdb?.name && loggin ? userdb?.name : "Anonimo" } </li>
-          <li onClick={signInWithGoogle}>Iniciar sesión con Google</li>
-          <li onClick={signOut}>cerrar</li>
-          <li> <button><Link href={"/dashboard"} as={"/dashboard"} >dashboard</Link> </button></li>
+          <li>
+            <Link
+              className="login-btn"
+              href={"/evento?page=1"}
+              as={"/evento?page=1"}
+            >
+              Evento <BsFillCreditCard2FrontFill className="icon" />
+            </Link>
+          </li>
+          {!userdb && (
+            <li className="login-btn" onClick={loginDiscord}>
+              Discord
+              <BsDiscord className="icon-discord" />
+            </li>
+          )}
+          {userdb && (
+            <li>
+              <UserHeader
+                id={userdb?._id}
+                picture={userdb.picture}
+                name={userdb.nmae}
+                signOutDiscord={signOutDiscord}
+              />
+            </li>
+          )}
         </ListNav>
       </Nav>
     </HeaderContainer>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

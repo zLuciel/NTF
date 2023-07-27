@@ -3,14 +3,15 @@ import { CardEventDescription, ContainerTags, ContainerTextFlex } from "./css/Ca
 import UserSpan from "@/components/UserSpan/UserSpan";
 import { Bgtrasparent } from "../CardEventID/css/CardEventID";
 import BtnSave from "@/components/Home/Arte/BtnSave";
-const CardDescription = ({image}) => {
+const CardDescription = ({image,tags,data}) => {
+
   return (
     <CardEventDescription>
       <div className="flex-descrip-user-fav">
       <Bgtrasparent>
       <UserSpan userAvatar={image} />
       </Bgtrasparent>
-      <BtnSave/>
+      <BtnSave data={data}/>
       </div>
       <ContainerTextFlex>
         <h2>Description</h2>
@@ -29,6 +30,9 @@ const CardDescription = ({image}) => {
       </ContainerTextFlex>
       <ContainerTags>
         <h2>Tags</h2>
+        <span className="flex-btn-tags">
+        {tags && tags?.map(tag => <button key={tag.name}>{tag.name}</button>)}
+        </span>
       </ContainerTags>
     </CardEventDescription>
   );

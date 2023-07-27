@@ -5,7 +5,7 @@ import Arte from '@/components/Home/Arte/Arte'
 import React from 'react'
 
 export async function GetEvents() {
-  const res =  await fetch("http://localhost:3000/api/todoevents")
+  const res =  await fetch("http://localhost:3000/api/todoevents?category=&price&page=1")
   return await res.json()
 }
 
@@ -19,7 +19,7 @@ const page =  async ({params}) => {
         <MainEventoID  id={id} />
     </main>
     <div style={{maxWidth:"1530px",margin:"0 auto",marginBottom:"20px"}}>
-      <Arte dataevent={dataEvent} />
+      { <Arte dataevent={dataEvent.event} />}
     </div>
     </>
   )

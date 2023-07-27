@@ -1,14 +1,16 @@
+"use client";
 import { DateTimePicker } from "@mantine/dates";
 import { TextInput, Textarea, MultiSelect } from "@mantine/core";
 import { ContainerForm } from "./css/FormEvent";
+import { useDispatch, useSelector } from "react-redux";
 
 const FormEvent = ({ form, handleSubmit }) => {
-  const options = [
-    { value: "conferencia", label: "Conferencia" },
-    { value: "seminario", label: "Seminario" },
-    { value: "taller", label: "Taller" },
-    { value: "webinar", label: "Webinar" },
-  ];
+  const dispatch = useDispatch();
+
+  const dataTags = useSelector((state) => state.allevents.tags);
+  const options = dataTags?.map((tag) => ({ value: tag._id, label: tag.name }));
+
+
 
   return (
     <ContainerForm>
@@ -35,14 +37,6 @@ const FormEvent = ({ form, handleSubmit }) => {
         <div className="fecha-form">
           <div>
             <DateTimePicker
-              label="Fecha de inicio"
-              placeholder="Date input"
-              mx="auto"
-              {...form.getInputProps("startDate")}
-            />
-          </div>
-          <div>
-            <DateTimePicker
               label="Fecha de finalización"
               placeholder="Date input"
               mx="auto"
@@ -52,12 +46,16 @@ const FormEvent = ({ form, handleSubmit }) => {
           </div>
         </div>
         <div>
-          <MultiSelect
-            data={options}
-            label="Selecciona opciones"
-            {...form.getInputProps("tags")}
-            searchable={true}
-          />
+          {dataTags && (
+            <MultiSelect
+              style={{ textTransform: "capitalize" }}
+              data={options}
+              label="Selecciona los Tags"
+              {...form.getInputProps("tagId")}
+              searchable={true}
+              clearable={true}
+            />
+          )}
         </div>
       </form>
     </ContainerForm>

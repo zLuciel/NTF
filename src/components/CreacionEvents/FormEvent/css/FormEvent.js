@@ -24,7 +24,7 @@ export const ContainerForm = styled.div`
   }
   
   .descrip-tarjeta  textarea{
-    min-height: 100px ;
+    min-height: 200px ;
   }
   
 `

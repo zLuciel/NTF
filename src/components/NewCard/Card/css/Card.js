@@ -8,7 +8,7 @@ export const NewCard = styled.div`
   background-color: var(--bg-secundary);
   border-radius: 10px;
   overflow: hidden;
-  width: 285px;
+  //width: 285px;
   height: 332px;
   display: grid;
   grid-template-rows: 182px 1fr;

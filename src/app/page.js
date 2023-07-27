@@ -5,12 +5,6 @@ import Swiper3D from "@/components/Home/MainColum2/Swiper3D";
 import GridGallery from "@/components/GridGallery/GridGallery";
 
 export default function Home() {
- /*const dataEvent = useSelector((state) => state.allevents.data);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(allfetchEvents());
-  }, [dispatch]);*/ 
 
   return (
     <>

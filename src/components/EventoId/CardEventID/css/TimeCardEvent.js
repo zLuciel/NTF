@@ -8,7 +8,8 @@ justify-content: center;
 align-items: center;
 gap: 12px;
 .separador{
-    color: #484848;
+    //color: #484848;
+    color: var(--morado-claro);
     font-size: 2.5rem;
 }
 `

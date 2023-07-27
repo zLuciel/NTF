@@ -3,13 +3,16 @@ import { styled } from "styled-components";
 
 export const CardIdEvent = styled.div`
   overflow: hidden;
-  background: black;
+  background: #161616;
   color: white;
   position: relative;
   height: 548px;
+  border-radius: 10px;
   // width: 901px;
-  filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.25));
+  //filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
   & > img {
+    
+    filter: brightness(85%);
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -47,6 +50,7 @@ export const CardInfoAbsoluteID = styled.div`
     font-weight: 700;
     font-size: 36px;
     line-height: 48px;
+    text-shadow: -4px 4px 4px  rgba(0, 0, 0, 0.53);
   }
 
   .comprar-card-id {
@@ -54,13 +58,13 @@ export const CardInfoAbsoluteID = styled.div`
     width: max-content;
     color: white;
     background: var(--morado-claro);
-    border: none;
-    padding: 15px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.48);
+    padding: 15px 20px;
     font-family: "Exo";
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
   }
 `;
@@ -68,8 +72,10 @@ export const CardInfoAbsoluteID = styled.div`
 export const Bgtrasparent = styled.div`
   width: max-content;
   padding: 5px 10px;
-  backdrop-filter: blur(5.5px);
-  background: rgba(0, 0, 0, 0.2);//oscuro
+  backdrop-filter: blur(0px);
+  //background: rgba(0, 0, 0, 0.2);//oscuro
+  background: rgba(22, 22, 22, 0.4);//oscuro
+ // background: #161616;
   box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px; //50
 `;
@@ -79,10 +85,11 @@ export const FlexGap = styled.div`
   flex-direction: column;
   gap: 10px;
   .price-event-id {
+    padding: 0 10px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     span {
       color: var(--morado-claro);
     }

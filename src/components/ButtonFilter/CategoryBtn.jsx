@@ -1,28 +1,26 @@
-"use client";
-import { useState,  useEffect } from "react";
+"use client"
 import { ContainerOption, DropViewOption, OptionBtn } from "./css/OptionBtn";
 import { IoMdArrowDropdown } from 'react-icons/io';
-const CategoryBtn = ({ classm }) => {
-  const [isOpen, setIsOpen] = useState(false);
+import useOutsideClick from "@/hooks/useOutsideClick";
+import { useState } from "react";
+const CategoryBtn = ({ classm,setFilter,filter,query,option }) => {
+  
+  const { isOpen, setIsOpen } = useOutsideClick(false, classm);
+  const [current,setCurrent] = useState(query || classm)
 
-
-  useEffect(() => {
-    document.addEventListener("click", (e) => {
-      if (!e.target.matches(`.${classm} *`)) {
-        setIsOpen(false);
-      }
-    });
-  }, [classm]);
+  function handleValue(value){
+  setCurrent(value)  
+  setFilter({...filter,[classm]:value})
+  setIsOpen(false)
+  }
 
   return (
     <ContainerOption className={`${classm}`}>
-      <OptionBtn onClick={() => setIsOpen(!isOpen)}>{classm} <IoMdArrowDropdown className="icon-option" /></OptionBtn>
+      <OptionBtn onClick={() => setIsOpen(!isOpen)}>{current} <IoMdArrowDropdown className="icon-option" /></OptionBtn>
       {isOpen && (
         <DropViewOption>
           <ul>
-            <li onClick={() => setIsOpen(false)}>Antiguedad</li>
-            <li onClick={() => setIsOpen(false)}>Arte</li>
-            <li onClick={() => setIsOpen(false)}>Espacial</li>
+            {option?.map(li => <li key={li._id} onClick={() => handleValue(li.name)}>{li.name}</li>)}
           </ul>
         </DropViewOption>
       )}

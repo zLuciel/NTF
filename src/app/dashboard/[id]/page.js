@@ -1,11 +1,10 @@
 import React from "react";
 import "./dashboard.css";
-import PortadaView from "@/components/Dashboard/PortadaView/PortadaView";
-import ImageUser from "@/components/Dashboard/ImageUser/ImageUser";
 import GridDashboard from "@/components/Dashboard/GridDashboard/GridDashboard";
+import DashboardLayout from "../layaout";
 
 export const dynamic = 'force-dynamic';
-const img ="https://res.cloudinary.com/ddo18h0ua/image/upload/v1689562600/Events/portadaDashb_raj5vu.png";
+
 
 const fetchUser = async (id) => {
   try {
@@ -22,15 +21,11 @@ const page = async ({params}) => {
   const {id} = params
   const data = await fetchUser(id)
   return (
-    <div>
-      <PortadaView image={img} />
-      <section className="section-dashboard">
-        <div className="container-img">
-        <ImageUser />
-        </div>
-        <GridDashboard  user={data?.user} events={data?.eventsUser} />
-      </section>
-    </div>
+    <>
+     <DashboardLayout picture={data?.user.picture}>
+        <GridDashboard  user={data?.user} data={data?.eventsUser} />
+     </DashboardLayout>
+    </>
   );
 };
 

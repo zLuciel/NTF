@@ -17,8 +17,37 @@ const getEventsByUserId = async (userId) => {
     }
 };
 
+
+async function borrarDatoEspecifico(id){
+  // Buscar el evento por su id
+
+  const evento = await Eventos.findById(id);
+
+  // Si el evento no existe, devuelve un mensaje de error
+  if (!evento) {
+    return NextResponse.json({ msg: "Evento no encontrado" });
+  }
+  evento.delete = true;
+
+  // Guardar los cambios en la base de datos
+   await evento.save();
+}
+
+
 export async function GET (req,{params}){
     const id = params.id;
     const events = await getEventsByUserId(id) ;
     return NextResponse.json(events)
+}
+
+
+//Borrado logico
+export async function DELETE(req,{params}) {
+  try {
+    const  id = params.id;
+    await borrarDatoEspecifico(id);
+    return NextResponse.json({ msg: "se acaba de desactivar" });
+  } catch (error) {
+    return NextResponse.json({ msg: "no se pudo borrar", error: {id} });
+  }
 }

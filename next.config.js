@@ -2,7 +2,7 @@
 //const dns = require("dns");
 const nextConfig = {
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com","cdn.discordapp.com"],
   },
   experimental: { appDir: true, serverComponentsExternalPackages: ["mongoose"] },
   webpack(config) {

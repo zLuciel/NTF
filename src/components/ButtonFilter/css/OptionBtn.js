@@ -28,7 +28,7 @@ export const OptionBtn = styled.button`
 `;
 
 export const DropViewOption = styled.span`
-  width: max-content;
+  width: 100%;
   border-radius: 10px;
   border: 1px solid var(--morado-claro);
   background: #161616;
@@ -36,12 +36,16 @@ export const DropViewOption = styled.span`
   position: absolute;
   top: 50px;
   z-index: 4;
-  padding: 10px;
+  padding: 10px ;
   ul {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
     list-style: none;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    text-align: center;
   }
   ul > li:hover{
     cursor: pointer;

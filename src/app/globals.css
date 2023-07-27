@@ -44,3 +44,17 @@ h1{
   color: rgb(0, 0, 0);
   color: white;
 }
+.bgsvg{
+  position:relative;
+  background:  url(/background.svg) center center/cover no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: calc(100vh - 77px);
+}
+ul {
+  list-style: none;
+}
+
+.icon{
+  color: var(--morado-claro);
+}

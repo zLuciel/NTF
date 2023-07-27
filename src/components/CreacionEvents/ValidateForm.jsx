@@ -22,17 +22,15 @@ const useEventForm = (
   price = 0,
   description = "",
   endDate = "",
-  startDate = ""
+  tags = []
 ) => {
   const endTime = convertDate(endDate);
-  const startTime = convertDate(startDate);
   const form = useForm({
     initialValues: {
       title,
       descriptionCard: description,
       price,
-      tags: [],
-      startDate: startTime,
+      tagId: tags,
       endDate: endTime,
     },
     validate: {

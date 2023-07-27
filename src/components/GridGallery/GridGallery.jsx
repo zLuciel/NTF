@@ -99,7 +99,7 @@ const GridGallery = () => {
             data false login falseipsu is data false loginfalseipsu is data
             false login false loginfalseipsu is data false login
           </Parrafo>
-          <Link href={"/evento/category/espacial"}>Ir a ver</Link>
+          <Link href={"/evento?category=anime&page=1"}>Ir a ver</Link>
         </span>
       </GalleryEspacial>
     </GridGalleryStyled>
