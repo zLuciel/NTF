@@ -1,7 +1,7 @@
 import { Pagination } from "@mantine/core";
 import { usePathname, useRouter } from "next/navigation";
 
-const PaginationEvent = ({ filter, setFilter,countState }) => {
+const PaginationEvent = ({ filter, setFilter,countState,$page }) => {
   const router = useRouter();
   const pathname = usePathname();
   
@@ -21,7 +21,7 @@ const PaginationEvent = ({ filter, setFilter,countState }) => {
     <Pagination
       style={{padding:"50px 0 0 0"}}
       position="center"
-      value={filter.page}
+      value={Number($page)}
       onChange={currentPage}
       total={countState}
       color="red"

@@ -19,19 +19,34 @@ export const Colum1Main = styled.div`
       color: var(--morado-claro);
       display: inline;
     }
+    //*mediaQuery */
+    @media (max-width: 1416px){
+      max-width: 575px;
+      font-size: 3.4rem;
+    }
+    @media (max-width: 1195px){
+      text-align: center;
+      max-width: 80%;
+    }
+    @media (max-width: 628px){
+      font-size: 2.5rem;
+      line-height: normal;
+    }
   }
   & > p {
     max-width: 450px;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 500;
     line-height: 22px;
     color: #dfdfdf;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    //**MediaQuery */
+  @media (max-width: 1195px){
+    text-align: center;
+    font-size: 0.9rem;
+  }
   }
   button {
-    //width: 171px;
-    //height: 53px;
     width: max-content;
     padding: 10px 25px;
     line-height: 1.5;
@@ -42,5 +57,14 @@ export const Colum1Main = styled.div`
     border-radius: 10px;
     border: none;
     font-weight: 700;
+    //**MediaQuery */
+    @media (max-width: 628px){
+      font-size: 1rem;
+    }
+  }
+  //**MediaQuery */
+  @media (max-width: 1195px){
+      justify-content: center;
+      align-items: center;
   }
 `;

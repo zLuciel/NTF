@@ -12,7 +12,7 @@ import { TimeCard } from "../TimeCard/TimeCard";
 import BtnSave from "@/components/Home/Arte/BtnSave";
 import Link from "next/link";
 
-const Card = ({ id, user, data, edit }) => {
+const Card = ({ id, user, data, edit,desact,setManu }) => {
   // identificador de imagen
   const imageIdentifier = data.image.split("/");
   const urlTemplaes = `https://res.cloudinary.com/ddo18h0ua/image/upload/${data.image}.jpg`;
@@ -25,7 +25,7 @@ const Card = ({ id, user, data, edit }) => {
           <p>$</p>
           {data.price}
         </PriceCard>
-        <BtnSave data={data} edit={edit} />
+        <BtnSave setManu={setManu} data={data} edit={edit} desact={desact} />
       </AbsoluteFlex>
       <ImgCardNew>
         <Image
@@ -37,20 +37,18 @@ const Card = ({ id, user, data, edit }) => {
       </ImgCardNew>
       <div className="grid-center">
         <InfoCardNew>
-
-            <Link prefetch={false} href={`/evento/[id]`} as={`/evento/${id}`}>
-              <h1>
-                {data.title ? data.title : "Indonesia - korea Conference "}{" "}
-              </h1>
-            </Link>
-            <Link
-              prefetch={false}
-              href={`/dashboard/[id]`}
-              as={`/dashboard/${user?._id}`}
-            >
-              <UserSpan name={user.name} userAvatar={user.picture} />
-            </Link>
-  
+          <Link prefetch={false} href={`/evento/[id]`} as={`/evento/${id}`}>
+            <h1>
+              {data.title ? data.title : "Indonesia - korea Conference "}{" "}
+            </h1>
+          </Link>
+          <Link
+            prefetch={false}
+            href={`/dashboard/[id]`}
+            as={`/dashboard/${user?._id}`}
+          >
+            <UserSpan name={user?.name} userAvatar={user?.picture} />
+          </Link>
         </InfoCardNew>
         <TimeCard endDate={data.endDate} />
       </div>

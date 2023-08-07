@@ -12,11 +12,15 @@ export async function GET(req,{params}) {
 //UID DEL USUARIO POR REQ
 //SI EL UID NO EXISTE DALE UN ERROR
 try {
-  const eventsUser = await Eventos.find({ user: id }).populate("user","name _id");
+  const eventsUser = await Eventos.find({ user: id }).populate("user","name _id picture");
   const user = await Users.findById(id) // Puebla los campos 'events' del usuario con los documentos de eventos correspondientes
   return NextResponse.json({user,eventsUser});
 } catch (error) {
   console.error(error);
   return NextResponse.json({ error: 'Error al obtener los usuarios y sus eventos' });
 }
+}
+
+export async function POST(req,{params}) {
+
 }

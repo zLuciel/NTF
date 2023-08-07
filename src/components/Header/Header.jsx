@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 import { HeaderContainer, ListNav, Logo, Nav } from "./css/Header";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { getFavorite, getUser, setNullUser } from "@/redux/users/actions";
+import { getFavorite, getUser, getUserEvent, setNullUser } from "@/redux/users/actions";
 import { useEffect } from "react";
 
 import UserHeader from "../UserHeader/UserHeader";
@@ -15,6 +15,7 @@ import { fetchtags } from "@/redux/alleventos/actions";
 const Header = () => {
   const { data: session } = useSession();
   const userdb = useSelector((state) => state.users.user);
+  const userevent = useSelector((state) => state.users.data);
   const dispatch = useDispatch();
 
   async function loginDiscord() {
@@ -35,6 +36,7 @@ const Header = () => {
 
   useEffect(() => {
     if (userdb) {
+      dispatch(getUserEvent(userdb?._id))
       dispatch(getFavorite(userdb?._id));
     }
   }, [dispatch, userdb]);

@@ -10,7 +10,7 @@
   --bg-principal:#1B1B1B; /** 101010 #f8f8f8 #282832*linear-gradient(90deg, #232526 0%, #414345 100%)*/
   --morado-claro: #f44848;
   --color-letras: #f44848;
-  --max-width: 1100px;
+  --max-width: 1530px;/**1230*/
 }
 
 
@@ -41,7 +41,6 @@ a {
 h1{
   font-weight: 400;
   font-family: var(--font-principal);
-  color: rgb(0, 0, 0);
   color: white;
 }
 .bgsvg{
@@ -57,4 +56,16 @@ ul {
 
 .icon{
   color: var(--morado-claro);
+}
+
+@media (max-width: 1416px){
+  :root {
+    --max-width: 1330px;/**1230*/
+  }
+}
+
+@media (max-width: 1319px){
+  :root {
+    --max-width: 1180px;/**1230*/
+  }
 }

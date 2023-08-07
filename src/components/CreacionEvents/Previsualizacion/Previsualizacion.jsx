@@ -10,6 +10,7 @@ const Previsualizacion = ({
   imageUrl,
   setImageUrl,
   setFile,
+  userdb,
 }) => {
 
   // mostrando imagen para visualizar en tiempo real
@@ -34,7 +35,7 @@ const Previsualizacion = ({
     <ContainerPreVisual>
       <div>
         <h1>Previsualización</h1>
-        <Card data={data} />
+        <Card data={data} user={userdb}/>
       </div>
       <input
         id="file-inputx"

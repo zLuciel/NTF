@@ -1,22 +1,31 @@
 import React from "react";
 import { FlexButtonUser, Start } from "./css/Column2";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { MdCreateNewFolder, MdOutlineFavorite,MdDeleteForever } from "react-icons/md";
 import { IoIosCreate } from "react-icons/io";
 import BtnViewCreate from "@/components/Button/BtnViewCreate";
 
-const Column2 = ({ children, setFav }) => {
+const Column2 = ({ children, setView }) => {
   const pathname = usePathname();
+  const router = useRouter()
   const pathArray = pathname.slice(1, -1).split("/");
   const pathDash = pathArray[1];
 
   function handleClickFalse() {
-    setFav(false);
+    setView(0);
   }
 
   function handleClickTrue() {
-    setFav(true);
+    setView(1);
+  }
+
+  function viewDesactive() {
+    setView(2);
+  }
+
+  function handleDirectCreate() {
+    router.push("/dashboard/create")
   }
 
   return (
@@ -43,7 +52,7 @@ const Column2 = ({ children, setFav }) => {
             bg="--bg-secundary"
             ico={<MdDeleteForever />}
             text="Desactivados"
-            handleClick={handleClickTrue}
+            handleClick={viewDesactive}
           /></>
           )}
         </Start>
@@ -53,7 +62,7 @@ const Column2 = ({ children, setFav }) => {
             icoColor="--bg-secundary"
             ico={<IoIosCreate />}
             text="Crear"
-            handleClick={handleClickTrue}
+            handleClick={handleDirectCreate}
           />
         )}
       </FlexButtonUser>

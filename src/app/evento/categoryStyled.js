@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 export const ContainerCategory = styled.section`
   color: white;
   padding: 50px 20px;
-  max-width: 1536px;
+  max-width: var(--max-width);
   margin: 0 auto;
 
 `;

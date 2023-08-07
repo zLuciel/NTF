@@ -24,6 +24,7 @@ const priceOption = [
 ];
 
 const Page = () => {
+  
   const [filter, setFilter] = useState(initalState);
   const router = useRouter()
 
@@ -76,7 +77,7 @@ const Page = () => {
         <GridCard>
           <RenderMapCard category={$category} price={$priceRange} page={$page} />
         </GridCard>
-        <PaginationEvent countState={countState} filter={filter} setFilter={setFilter} />
+        <PaginationEvent countState={countState} $page={$page} filter={filter} setFilter={setFilter} />
       </ContainerCategory>
     </div>
   );

@@ -15,7 +15,7 @@ export const HeaderContainer = styled.header`
 export const Nav = styled.nav`
   padding: 0 20px;
   margin: 0 auto;
-  max-width: 1536px;
+  max-width: var(--max-width);
   color: white;
   height: 75px;
   display: flex;

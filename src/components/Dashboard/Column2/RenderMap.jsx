@@ -1,9 +1,18 @@
 import Card from "@/components/NewCard/Card/Card";
 import React from "react";
 
-const RenderMap = ({ data,edit =false }) => {
+const RenderMap = ({ data, edit = false, desact = false,setManu }) => {
+  
   return data?.map((data, i) => (
-    <Card key={i} edit={edit} data={data} id={data._id} user={data?.user} />
+    <Card
+      setManu={setManu}
+      key={i}
+      edit={edit}
+      data={data}
+      desact={desact}
+      id={data._id}
+      user={data?.user}
+    />
   ));
 };
 

@@ -1,7 +1,8 @@
 import crypto from "crypto";
 
-const preset_key = "fmuu34uf";
-const cloud_name = "ddo18h0ua";
+const preset_key = process.env.PRESET_KEY_CLOUDINARY;
+const cloud_name = process.env.CLOUD_NAME_CLOUDINARY;
+const api_key = process.env.API_KEY_CLOUDINARY;
 
 const generateSHA1 = (data) => {
   const hash = crypto.createHash("sha1");
@@ -15,14 +16,14 @@ const generateSignature = (publicId, apiSecret) => {
 };
 
 async function deleteImageCloudinary(publicId) {
-  const apiSecret = "d3L2y6LtaM3tpK7eLcsiepfHD3c";
+  const apiSecret = process.env.API_SECRET_CLOUDINARY;
   const timestamp = new Date().getTime();
   const signature = generateSHA1(generateSignature(publicId, apiSecret));
   try {
     const formData = new FormData();
     formData.append("public_id", publicId);
     formData.append("signature", signature);
-    formData.append("api_key", "821231837154938");
+    formData.append("api_key", api_key);
     formData.append("timestamp", timestamp);
     // formData.append("api_secret", "d3L2y6LtaM3tpK7eLcsiepfHD3c");
     //formData.append("folder", "Events");

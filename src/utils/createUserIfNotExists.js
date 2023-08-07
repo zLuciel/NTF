@@ -12,7 +12,7 @@ const createUserIfNotExists = async (userData) => {
   // verificacion de usuario
   if (existingUser) {
     const eventsUser = await Eventos.find({ user: existingUser._id })
-      .populate("user", "name _id")
+      .populate("user", "name _id picture")
       .populate("tags", "name _id");
     const user = await Users.findById(existingUser._id).populate(
       "favoritos",

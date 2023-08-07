@@ -10,6 +10,16 @@ export const FlexColumn1 = styled.div`
   gap: 10px;
   padding-right: 10px;
   margin-bottom: 20px;
+/* "namealias namealias "
+    "Follow redes"
+    "biografia biografia";*/
+  @media (max-width: 1095px){
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "namealias  redes"
+    "Follow  redes"
+    "biografia biografia";
+  }
 `;
 export const NameUserAlias = styled.span`
   grid-area: namealias;
@@ -119,6 +129,7 @@ export const ContainerBiografia = styled.div`
     font-size: 1.25rem;
     margin-bottom: 10px;
   }
+  
 `;
 
 export const ContainerRedes = styled.div`
@@ -155,6 +166,10 @@ export const ContainerRedes = styled.div`
     &:hover{
       color: var(--morado-claro);
     }
+  }
+  //**MediaQuery */
+  @media (max-width: 1095px){
+    justify-self: end;
   }
 `;
 

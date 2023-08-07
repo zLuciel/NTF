@@ -1,6 +1,7 @@
 import axios from "axios";
-import { fetchUserData, dataEdit,fetchUserFavorite, messageStatus } from "./userSlice";
+import { fetchUserData, dataEdit,fetchUserFavorite, messageStatus, fetchEventUser } from "./userSlice";
 export const dynamic = "force-dynamic";
+const url = "https://ntf-ashy.vercel.app/"
 
 export const getUser = (data) => async (dispatch) => {
   try {
@@ -10,13 +11,30 @@ export const getUser = (data) => async (dispatch) => {
     user.picture = data?.picture
     user.email = data?.email 
 
-    const response = await axios.post("http://localhost:3000/api/users", user);
-    const dataRes = await response.data;
-    dispatch(fetchUserData(dataRes));
+    const response = await axios.post(`${url}api/users`, user);
+    const dataUser = await response.data;
+  
+    dispatch(fetchUserData(dataUser));
   } catch (error) {
     console.log(error);
   }
 };
+
+export const getUserEvent= (id) => async (dispatch) => {
+  try {
+   
+    const res = await fetch(`${url}api/users?id=${id}`,{
+      next: { revalidate: 10 },
+    });
+    const dataEvent = await res.json()
+    const desactive = dataEvent.filter(data => data.delete === true)
+    console.log(desactive,4);
+    dispatch(fetchEventUser(dataEvent));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 export const setNullUser = (data) => async (dispatch) => {
   try {
@@ -37,9 +55,17 @@ export const insertDataEdit = (data) => async (dispatch) => {
 
 export const DesactiveCard = (id) => async (dispatch) => {
   try {
-    const response = await axios.delete(`http://localhost:3000/api/users/events/${id}`);
+    const response = await axios.delete(`${url}api/users/events/${id}`);
     const dataRes = await response.data;
     //dispatch(fetchUserData(dataRes));
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const ActiveEvent = (id) => async (dispatch) => {
+  try {
+    const response = await axios.put(`${url}api/users/events/${id}`);
+    const dataRes = await response.data;
   } catch (error) {
     console.log(error);
   }
@@ -47,7 +73,7 @@ export const DesactiveCard = (id) => async (dispatch) => {
 
 export const addFavorite= (usuarioId,eventoId) => async (dispatch) => {
   try {
-    const response = await axios.post(`http://localhost:3000/api/users/favoritos`,{usuarioId,eventoId});
+    const response = await axios.post(`${url}api/users/favoritos`,{usuarioId,eventoId});
     const data = await response.data;
     dispatch(messageStatus(data));
   } catch (error) {
@@ -57,8 +83,8 @@ export const addFavorite= (usuarioId,eventoId) => async (dispatch) => {
 
 export const getFavorite= (usuarioId) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/users/favoritos?id=${usuarioId}`,{
-      next: { revalidate: 0 },
+    const response = await fetch(`${url}api/users/favoritos?id=${usuarioId}`,{
+      next: { revalidate: 10 },
     });
     const data = await response.json();
     dispatch(fetchUserFavorite(data));

@@ -2,7 +2,7 @@
  position:relative;
  top:-110px;
  display: grid;
- max-width: 1586px;
+ max-width: var(--max-width);
  margin: 0 auto;
  padding: 0 50px;
 }

@@ -5,7 +5,7 @@ import { UserHeaderStyled, DropUser, ListUserHeader } from "./css/UserHeader";
 import { IoExitOutline } from "react-icons/io5";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import { useDispatch } from "react-redux";
-import { getFavorite } from "@/redux/users/actions";
+import { getFavorite, getUserEvent } from "@/redux/users/actions";
 
 const UserHeader = ({ picture, name, signOutDiscord, id }) => {
   const classm = "drop-user-header";
@@ -14,6 +14,7 @@ const UserHeader = ({ picture, name, signOutDiscord, id }) => {
 
   function close() {
     dispatch(getFavorite(id));
+    dispatch(getUserEvent(id))
     setIsOpen(!isOpen);
   }
 

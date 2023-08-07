@@ -1,10 +1,11 @@
 import { addTags, fetchEventsSuccess } from "./alleventSlice";
 export const dynamic = "force-dynamic"
 
+const url = "https://ntf-ashy.vercel.app/"
 
 export const allfetchEvents = (category,price,page) => async (dispatch) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/todoevents?category=${category}&price=${price}&page=${page}`, {
+    const response = await fetch(`${url}api/todoevents?category=${category}&price=${price}&page=${page}`, {
       next: { revalidate: 10 },
     });
     
@@ -18,7 +19,7 @@ export const allfetchEvents = (category,price,page) => async (dispatch) => {
 
 export const fetchtags = () => async (dispatch) => {
   try {
-    const response = await fetch("http://localhost:3000/api/events/tags",{
+    const response = await fetch(`${url}api/events/tags`,{
       next: { revalidate: 10 },
     });
     const tags = await response.json();
