@@ -4,8 +4,9 @@ import CardEventID from '../CardEventID/CardEventID'
 import CardDescription from '../CardDescription/CardDescription'
 
 export async function GetEventsId(id) {
+  const url = "https://ntf-ashy.vercel.app/"
   try {
-     const res =  await fetch(`http://localhost:3000/api/events/${id}`)
+     const res =  await fetch(`${url}api/events/${id}`)
      const data = res.json();
      return await data
   } catch (error) {
