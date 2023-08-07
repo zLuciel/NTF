@@ -3,9 +3,9 @@ import MainEventoID from '@/components/EventoId/MainEventoID/MainEventoID'
 import Arte from '@/components/Home/Arte/Arte'
 
 import React from 'react'
-
+const url = "https://ntf-ashy.vercel.app/"
 export async function GetEvents() {
-  const res =  await fetch("http://localhost:3000/api/todoevents?category=&price&page=1")
+  const res =  await fetch(`${url}api/todoevents?category=&price&page=1`)
   return await res.json()
 }
 
