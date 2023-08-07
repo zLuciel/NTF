@@ -69,3 +69,7 @@ ul {
     --max-width: 1180px;/**1230*/
   }
 }
+
+.eliminar{
+  display: none;
+}
