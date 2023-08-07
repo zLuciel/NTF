@@ -5,10 +5,10 @@ import DashboardLayout from "../layaout";
 
 export const dynamic = 'force-dynamic';
 
-
+const url = "https://ntf-ashy.vercel.app/"
 const fetchUser = async (id) => {
   try {
-    const data = await fetch(`http://localhost:3000/api/users/${id}`, { cache: 'no-store' })
+    const data = await fetch(`${url}api/users/${id}`, { cache: 'no-store' })
    return await data.json()
   } catch (error) {
     console.log(error,"dashboard id");
