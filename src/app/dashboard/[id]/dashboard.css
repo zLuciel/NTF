@@ -4,7 +4,7 @@
  display: grid;
  max-width: var(--max-width);
  margin: 0 auto;
- padding: 0 50px;
+ padding: 0 20px;
 }
 
 .container-img{
@@ -13,8 +13,4 @@
     align-items: center;
     max-width: 340px;
     margin-bottom: 10px;
-}
-
-.none{
-    display: none;
 }
