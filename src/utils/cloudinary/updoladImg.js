@@ -8,7 +8,7 @@ async function CloudinaryGetImg(file){
     formData.append("folder", "Events");
   
     const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${cloud_name}/image/upload`,
+      `https://api.cloudinary.com/v1_1/ddo18h0ua/image/upload`,
       {
         method: "POST",
         body: formData,
