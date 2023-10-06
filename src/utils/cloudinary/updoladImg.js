@@ -1,4 +1,4 @@
-const preset_key = process.env.PRESET_KEY_CLOUDINARY;
+const preset_key = "fmuu34uf";
 const cloud_name = process.env.CLOUD_NAME_CLOUDINARY;
 
 async function CloudinaryGetImg(file){

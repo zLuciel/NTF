@@ -2,7 +2,7 @@ import crypto from "crypto";
 
 const preset_key = process.env.PRESET_KEY_CLOUDINARY;
 const cloud_name = process.env.CLOUD_NAME_CLOUDINARY;
-const api_key = process.env.API_KEY_CLOUDINARY;
+const api_key = "d3L2y6LtaM3tpK7eLcsiepfHD3c";
 
 const generateSHA1 = (data) => {
   const hash = crypto.createHash("sha1");
@@ -29,7 +29,7 @@ async function deleteImageCloudinary(publicId) {
     //formData.append("folder", "Events");
 
     const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${cloud_name}/image/destroy`,
+      `https://api.cloudinary.com/v1_1/ddo18h0ua/image/destroy`,
       {
         method: "POST",
         body: formData,
